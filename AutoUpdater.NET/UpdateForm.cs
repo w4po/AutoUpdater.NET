@@ -54,7 +54,7 @@ internal sealed partial class UpdateForm : Form
         }
 
         // Create and configure the new viewer
-        _changelogViewer = ChangelogViewerFactory.Create(AutoUpdater.ChangelogViewerType);
+        _changelogViewer = ChangelogViewerFactory.Create(AutoUpdater.ChangelogViewerProvider);
         var viewerControl = _changelogViewer.Control;
         viewerControl.Dock = DockStyle.Fill;
         pnlChangelog.Controls.Add(viewerControl);

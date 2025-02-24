@@ -247,9 +247,15 @@ public static class AutoUpdater
     public static Mode UpdateMode;
     
     /// <summary>
-    ///     Set this to any of the available types to change the changelog viewer.
+    ///     Gets or sets whether to automatically load and register changelog viewer extensions from DLLs in the application directory.
+    ///     Default is true.
     /// </summary>
-    public static ChangelogViewerType ChangelogViewerType = ChangelogViewerFactory.GetDefaultViewerType();
+    public static bool AutoLoadExtensions { get; set; } = true;
+
+    /// <summary>
+    ///     Gets or sets the provider to use for displaying changelogs. If null, the factory will use the highest priority available provider.
+    /// </summary>
+    public static IChangelogViewerProvider ChangelogViewerProvider { get; set; }
     
     /// <summary>
     ///     An event that developers can use to exit the application gracefully.

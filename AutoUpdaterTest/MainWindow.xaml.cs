@@ -174,7 +174,7 @@ public partial class MainWindow : Window
         AutoUpdater.Icon = Resource.Icon;
 
         // Uncomment following line to change the Changelog viewer type.
-        //AutoUpdater.ChangelogViewerType = ChangelogViewerType.RichTextBox;
+        //AutoUpdater.ChangelogViewerProvider = new RichTextBoxViewerProvider();
 
         // Uncomment following lines to handle parsing logic of custom AppCast file.
         //AutoUpdater.HttpUserAgent = "AutoUpdaterTest";
@@ -185,7 +185,7 @@ public partial class MainWindow : Window
         //    p.UpdateInfo = new UpdateInfoEventArgs();
         //    p.UpdateInfo.CurrentVersion = json.tag_name.Value.TrimStart('v');
         //    p.UpdateInfo.ChangelogText = json.body;
-        //    if (AutoUpdater.ChangelogViewerType is ChangelogViewerType.WebBrowser or ChangelogViewerType.WebView2)
+        //    if (AutoUpdater.ChangelogViewerProvider is WebBrowserViewerProvider or WebView2ViewerProvider)
         //    {
         //        p.UpdateInfo.ChangelogText = json.body.Value.Replace("\r\n", "<br/>").Replace("\n", "<br/>");
         //        p.UpdateInfo.ChangelogText = $"<html><body style=\"background-color:#f5f2f2;font-size:10pt;\">{p.UpdateInfo.ChangelogText}</body></html>";

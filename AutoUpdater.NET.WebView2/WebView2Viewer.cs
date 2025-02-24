@@ -3,14 +3,14 @@ using System.IO;
 using System.Windows.Forms;
 using System.Threading.Tasks;
 using Microsoft.Web.WebView2.Core;
-using Microsoft.Web.WebView2.WinForms;
+using AutoUpdaterDotNET.ChangelogViewers;
 
-namespace AutoUpdaterDotNET.ChangelogViewers;
+namespace AutoUpdaterDotNET.WebView2;
 
 public class WebView2Viewer : IChangelogViewer
 {
     private bool _isInitialized;
-    private readonly WebView2 _webView = new()
+    private readonly Microsoft.Web.WebView2.WinForms.WebView2 _webView = new()
     {
         Dock = DockStyle.Fill,
         AllowExternalDrop = false
@@ -37,11 +37,11 @@ public class WebView2Viewer : IChangelogViewer
     {
         await EnsureInitialized();
         _webView.CoreWebView2.SetVirtualHostNameToFolderMapping("local.files", Path.GetTempPath(), CoreWebView2HostResourceAccessKind.Allow);
-            
+
         // Write content to a temporary HTML file
         var tempFile = Path.Combine(Path.GetTempPath(), "changelog.html");
         File.WriteAllText(tempFile, content);
-            
+
         // Navigate to the local file
         _webView.CoreWebView2.Navigate("https://local.files/changelog.html");
     }
