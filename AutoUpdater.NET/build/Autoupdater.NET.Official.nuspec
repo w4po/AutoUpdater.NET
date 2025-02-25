@@ -1,21 +1,19 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
     <metadata>
-        <id>Autoupdater.NET.Official</id>
+        <id>Autoupdater.NET.Extended</id>
         <version>1.9.5.1</version>
-        <title>AutoUpdater.NET</title>
-        <authors>rbsoft</authors>
+        <title>AutoUpdater.NET Extended</title>
+        <authors>rbsoft, w4po</authors>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <license type="expression">MIT</license>
         <readme>docs\README.md</readme>
         <licenseUrl>https://licenses.nuget.org/MIT</licenseUrl>
-        <projectUrl>https://github.com/ravibpatel/AutoUpdater.NET</projectUrl>
-        <description>AutoUpdater.NET is a class library that allows .NET developers to easily add auto update
-            functionality to their WinForms or WPF application projects.
-        </description>
-        <releaseNotes>https://github.com/ravibpatel/AutoUpdater.NET/releases</releaseNotes>
-        <copyright>Copyright © 2012-2025 RBSoft</copyright>
-        <tags>autoupdate updater c# vb wpf winforms</tags>
+        <projectUrl>https://github.com/w4po/AutoUpdater.NET</projectUrl>
+        <description>Extended version of AutoUpdater.NET with enhanced changelog viewer support and provider pattern implementation. Fork of the original AutoUpdater.NET by rbsoft.</description>
+        <releaseNotes>https://github.com/w4po/AutoUpdater.NET/releases</releaseNotes>
+        <copyright>Copyright © 2012-2025 RBSoft, 2025 w4po</copyright>
+        <tags>autoupdate updater c# vb wpf winforms extended provider-pattern</tags>
         <dependencies>
             <group targetFramework=".NETFramework4.6.2" />
             <group targetFramework=".NETCoreApp3.1" />

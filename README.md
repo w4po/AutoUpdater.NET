@@ -5,18 +5,18 @@
 AutoUpdater.NET is a class library that allows .NET developers to easily add auto update functionality to their classic
 desktop application projects.
 
-## The NuGet Package  [![NuGet](https://img.shields.io/nuget/v/Autoupdater.NET.Official.svg)](https://www.nuget.org/packages/Autoupdater.NET.Official/) [![NuGet](https://img.shields.io/nuget/dt/Autoupdater.NET.Official.svg)](https://www.nuget.org/packages/Autoupdater.NET.Official/)
+## The NuGet Package  [![NuGet](https://img.shields.io/nuget/v/Autoupdater.NET.Extended.svg)](https://www.nuget.org/packages/Autoupdater.NET.Extended/) [![NuGet](https://img.shields.io/nuget/dt/Autoupdater.NET.Extended.svg)](https://www.nuget.org/packages/Autoupdater.NET.Extended/)
 
 ````powershell
-PM> Install-Package Autoupdater.NET.Official
+PM> Install-Package Autoupdater.NET.Extended
 ````
 
 ````powershell
-PM> Install-Package Autoupdater.NET.Official.Markdown
+PM> Install-Package Autoupdater.NET.Extended.Markdown
 ````
 
 ````powershell
-PM> Install-Package Autoupdater.NET.Official.WebView2
+PM> Install-Package Autoupdater.NET.Extended.WebView2
 ````
 
 ## Supported .NET versions
@@ -391,7 +391,7 @@ interface.
 
 AutoUpdater.NET provides multiple options for displaying changelogs:
 
-### Core Package (Autoupdater.NET.Official)
+### Core Package (Autoupdater.NET.Extended)
 
 The core package includes two basic changelog viewers:
 * **WebBrowser Viewer** (Default, Priority 1): Uses the default WebBrowser control
@@ -399,10 +399,10 @@ The core package includes two basic changelog viewers:
 
 ### Additional Packages
 
-#### Markdown Package (Autoupdater.NET.Official.Markdown)
+#### Markdown Package (Autoupdater.NET.Extended.Markdown)
 
 ````powershell
-PM> Install-Package Autoupdater.NET.Official.Markdown
+PM> Install-Package Autoupdater.NET.Extended.Markdown
 ````
 
 Adds support for rendering Markdown changelogs with:
@@ -412,10 +412,10 @@ Adds support for rendering Markdown changelogs with:
 * And other Markdown features
 * Priority 2 (higher than WebBrowser)
 
-#### WebView2 Package (Autoupdater.NET.Official.WebView2)
+#### WebView2 Package (Autoupdater.NET.Extended.WebView2)
 
 ````powershell
-PM> Install-Package Autoupdater.NET.Official.WebView2
+PM> Install-Package Autoupdater.NET.Extended.WebView2
 ````
 
 Adds modern web rendering support using Microsoft Edge WebView2:
