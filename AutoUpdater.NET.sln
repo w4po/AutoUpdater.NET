@@ -22,9 +22,12 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoUpdaterTest", "AutoUpdaterTest\AutoUpdaterTest.csproj", "{5C1E186E-2622-425D-8E90-2CC6C25EDE29}"
 	ProjectSection(ProjectDependencies) = postProject
 		{A9848B77-2D66-4C5C-9F0F-2F9F3FB6C5A3} = {A9848B77-2D66-4C5C-9F0F-2F9F3FB6C5A3}
+		{D93F12ED-BCF8-B6DB-D5AA-B67FAA700F4A} = {D93F12ED-BCF8-B6DB-D5AA-B67FAA700F4A}
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoUpdater.NET.WebView2", "AutoUpdater.NET.WebView2\AutoUpdater.NET.WebView2.csproj", "{A9848B77-2D66-4C5C-9F0F-2F9F3FB6C5A3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoUpdater.NET.Markdown", "AutoUpdater.NET.Markdown\AutoUpdater.NET.Markdown.csproj", "{D93F12ED-BCF8-B6DB-D5AA-B67FAA700F4A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -48,6 +51,10 @@ Global
 		{A9848B77-2D66-4C5C-9F0F-2F9F3FB6C5A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A9848B77-2D66-4C5C-9F0F-2F9F3FB6C5A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A9848B77-2D66-4C5C-9F0F-2F9F3FB6C5A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D93F12ED-BCF8-B6DB-D5AA-B67FAA700F4A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D93F12ED-BCF8-B6DB-D5AA-B67FAA700F4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D93F12ED-BCF8-B6DB-D5AA-B67FAA700F4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D93F12ED-BCF8-B6DB-D5AA-B67FAA700F4A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

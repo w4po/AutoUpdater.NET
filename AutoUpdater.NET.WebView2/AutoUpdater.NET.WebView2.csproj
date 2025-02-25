@@ -8,11 +8,8 @@
         <AssemblyTitle>AutoUpdater.NET.WebView2</AssemblyTitle>
         <Company>RBSoft</Company>
         <Product>AutoUpdater.NET.WebView2</Product>
-        <Copyright>Copyright © 2012-2024 RBSoft</Copyright>
-        <Version>1.9.3.0</Version>
-        <AssemblyVersion>1.9.3.0</AssemblyVersion>
-        <FileVersion>1.9.3.0</FileVersion>
-        <PackageVersion>1.9.3.0</PackageVersion>
+        <Copyright>Copyright © 2012-2025 RBSoft</Copyright>
+        <Version>1.9.5.1</Version>
         <SignAssembly>true</SignAssembly>
         <AssemblyOriginatorKeyFile>..\AutoUpdater.NET\AutoUpdater.NET.snk</AssemblyOriginatorKeyFile>
         <NeutralLanguage>en</NeutralLanguage>
@@ -26,7 +23,7 @@
         <PackageTags>autoupdate updater webview2 edge</PackageTags>
         <PackageReleaseNotes>https://github.com/ravibpatel/AutoUpdater.NET/releases</PackageReleaseNotes>
         <PackageOutputPath>build</PackageOutputPath>
-        <DocumentationFile>$(OutDir)\AutoUpdater.NET.WebView2.xml</DocumentationFile>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
         <LangVersion>latest</LangVersion>
     </PropertyGroup>
 
