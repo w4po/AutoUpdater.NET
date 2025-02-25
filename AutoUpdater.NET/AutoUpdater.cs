@@ -245,7 +245,7 @@ public static class AutoUpdater
     ///     Set this to any of the available modes to change behaviour of the Mandatory flag.
     /// </summary>
     public static Mode UpdateMode;
-    
+
     /// <summary>
     ///     Gets or sets whether to automatically load and register changelog viewer extensions from DLLs in the application directory.
     ///     Default is true.
@@ -256,7 +256,7 @@ public static class AutoUpdater
     ///     Gets or sets the provider to use for displaying changelogs. If null, the factory will use the highest priority available provider.
     /// </summary>
     public static IChangelogViewerProvider ChangelogViewerProvider { get; set; }
-    
+
     /// <summary>
     ///     An event that developers can use to exit the application gracefully.
     /// </summary>

@@ -12,6 +12,7 @@
     <ItemGroup>
         <ProjectReference Include="..\AutoUpdater.NET\AutoUpdater.NET.csproj"/>
         <ProjectReference Include="..\AutoUpdater.NET.WebView2\AutoUpdater.NET.WebView2.csproj" />
+        <ProjectReference Include="..\AutoUpdater.NET.Markdown\AutoUpdater.NET.Markdown.csproj" />
     </ItemGroup>
 
     <ItemGroup>

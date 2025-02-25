@@ -7,6 +7,9 @@ using AutoUpdaterDotNET.ChangelogViewers;
 
 namespace AutoUpdaterDotNET.WebView2;
 
+/// <summary>
+/// A changelog viewer for displaying changelogs using a modern browser.
+/// </summary>
 public class WebView2Viewer : IChangelogViewer
 {
     private bool _isInitialized;
@@ -15,7 +18,11 @@ public class WebView2Viewer : IChangelogViewer
         Dock = DockStyle.Fill,
         AllowExternalDrop = false
     };
+
+    /// <inheritdoc />
     public Control Control => _webView;
+
+    /// <inheritdoc />
     public bool SupportsUrl => true;
 
     private async Task EnsureInitialized()
@@ -33,6 +40,7 @@ public class WebView2Viewer : IChangelogViewer
         }
     }
 
+    /// <inheritdoc />
     public async void LoadContent(string content)
     {
         await EnsureInitialized();
@@ -40,12 +48,13 @@ public class WebView2Viewer : IChangelogViewer
 
         // Write content to a temporary HTML file
         var tempFile = Path.Combine(Path.GetTempPath(), "changelog.html");
-        File.WriteAllText(tempFile, content);
+        File.WriteAllText(tempFile, content, System.Text.Encoding.UTF8);
 
         // Navigate to the local file
         _webView.CoreWebView2.Navigate("https://local.files/changelog.html");
     }
 
+    /// <inheritdoc />
     public async void LoadUrl(string url)
     {
         await EnsureInitialized();
@@ -53,7 +62,7 @@ public class WebView2Viewer : IChangelogViewer
         if (AutoUpdater.BasicAuthChangeLog != null)
         {
             _webView.CoreWebView2.BasicAuthenticationRequested += delegate (object _, CoreWebView2BasicAuthenticationRequestedEventArgs args)
-            {
+                {
                 args.Response.UserName = ((BasicAuthentication)AutoUpdater.BasicAuthChangeLog).Username;
                 args.Response.Password = ((BasicAuthentication)AutoUpdater.BasicAuthChangeLog).Password;
             };
@@ -62,6 +71,7 @@ public class WebView2Viewer : IChangelogViewer
         _webView.CoreWebView2.Navigate(url);
     }
 
+    /// <inheritdoc />
     public void Cleanup()
     {
         if (File.Exists(Path.Combine(Path.GetTempPath(), "changelog.html")))
@@ -78,6 +88,10 @@ public class WebView2Viewer : IChangelogViewer
         _webView.Dispose();
     }
 
+    /// <summary>
+    /// Checks if WebView2 is available on the current environment
+    /// </summary>
+    /// <returns>True if WebView2 is available, false otherwise</returns>
     public static bool IsAvailable()
     {
         try
