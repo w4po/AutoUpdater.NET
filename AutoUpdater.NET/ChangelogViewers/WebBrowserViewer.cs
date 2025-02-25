@@ -5,15 +5,26 @@ using Microsoft.Win32;
 
 namespace AutoUpdaterDotNET.ChangelogViewers;
 
+/// <summary>
+/// A changelog viewer for displaying changelogs using a WebBrowser control.
+/// </summary>
 public class WebBrowserViewer : IChangelogViewer
 {
     private const string EmulationKey = @"SOFTWARE\Microsoft\Internet Explorer\Main\FeatureControl\FEATURE_BROWSER_EMULATION";
     private readonly int _emulationValue;
     private readonly string _executableName;
     private readonly WebBrowser _webBrowser;
+
+    /// <inheritdoc />
     public Control Control => _webBrowser;
+
+
+    /// <inheritdoc />
     public bool SupportsUrl => true;
 
+    /// <summary>
+    /// Initializes a new instance of the <see cref="WebBrowserViewer"/> class.
+    /// </summary>
     public WebBrowserViewer()
     {
         _webBrowser = new WebBrowser
@@ -43,8 +54,10 @@ public class WebBrowserViewer : IChangelogViewer
         SetupEmulation();
     }
 
+    /// <inheritdoc />
     public void LoadContent(string content) => _webBrowser.DocumentText = content;
 
+    /// <inheritdoc />
     public void LoadUrl(string url)
     {
         if (AutoUpdater.BasicAuthChangeLog != null)
@@ -83,6 +96,7 @@ public class WebBrowserViewer : IChangelogViewer
         }
     }
 
+    /// <inheritdoc />
     public void Cleanup()
     {
         _webBrowser.Dispose();
