@@ -632,6 +632,18 @@ update dialog.
 * CurrentVersion (Version) : Newest version of the application available to download.
 * InstalledVersion (Version) : Version of the application currently installed on the user's PC.
 * Mandatory (Mandatory) : Shows if the update is required or optional.
+* DownloadFileName (string) : Name of the downloaded file.
+
+In some cases, updates need to be downloaded from URLs that do not contain a properly formatted file name.
+For example:
+```
+https://example.com/download/aW90L2lvdHNvZnR3YXJlLzIwMjUvMDIvMjYvMTc0MDU3NDg1MjQ3OC56aXA=
+```
+You can specify the desired file name using the `DownloadFileName` property:
+
+````csharp
+args.DownloadFileName = "Update.zip";
+````
 
 ## Handling parsing logic manually
 
