@@ -293,6 +293,12 @@ var proxy = new WebProxy("ProxyIP:ProxyPort", true)
 AutoUpdater.Proxy = proxy;
 ````
 
+### Specify default Encoding used with requests
+
+```csharp
+AutoUpdater.DefaultEncoding = Encoding.UTF8;
+```
+
 ### Specify where to download the update file
 
 You can specify where you want to download the update file by assigning DownloadPath field as shown below. It will be

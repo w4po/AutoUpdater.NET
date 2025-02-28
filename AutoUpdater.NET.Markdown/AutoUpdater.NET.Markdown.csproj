@@ -8,12 +8,9 @@
 	<Company>RBSoft</Company>
 	<Product>AutoUpdater.NET.Markdown</Product>
 	<Copyright>Copyright © 2012-2025 RBSoft</Copyright>
-	<Version>1.9.5.1</Version>
-	<AssemblyVersion>1.9.5.1</AssemblyVersion>
-	<FileVersion>1.9.5.1</FileVersion>
-	<PackageVersion>1.9.5.1</PackageVersion>
-	<SignAssembly>true</SignAssembly>
-	<AssemblyOriginatorKeyFile>..\AutoUpdater.NET\AutoUpdater.NET.snk</AssemblyOriginatorKeyFile>
+	<Version>1.9.5.2</Version>
+	<!--<SignAssembly>true</SignAssembly>
+	<AssemblyOriginatorKeyFile>..\AutoUpdater.NET\AutoUpdater.NET.snk</AssemblyOriginatorKeyFile>-->
 	<NeutralLanguage>en</NeutralLanguage>
 	<PackageId>Autoupdater.NET.Markdown</PackageId>
 	<IncludeSymbols>true</IncludeSymbols>

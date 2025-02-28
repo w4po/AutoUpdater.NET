@@ -11,6 +11,7 @@ using System.Threading;
 using System.Windows;
 using System.Windows.Forms;
 using System.Xml;
+using System.Text;
 using System.Xml.Serialization;
 using AutoUpdaterDotNET.ChangelogViewers;
 using AutoUpdaterDotNET.Properties;
@@ -196,6 +197,11 @@ public static class AutoUpdater
     /// </summary>
     public static IPersistenceProvider PersistenceProvider;
 
+    /// <summary>
+    ///     Default encoding used with web requests. Defaults to UTF-8
+    /// </summary>
+    public static Encoding DefaultEncoding = Encoding.UTF8;
+    
     /// <summary>
     ///     Set Proxy server to use for all the web requests in AutoUpdater.NET.
     /// </summary>
@@ -753,7 +759,10 @@ public static class AutoUpdater
         {
             CachePolicy = new RequestCachePolicy(RequestCacheLevel.NoCacheNoStore)
         };
-
+        
+        if (DefaultEncoding != null)
+            webClient.Encoding = DefaultEncoding;
+        
         if (Proxy != null)
         {
             webClient.Proxy = Proxy;

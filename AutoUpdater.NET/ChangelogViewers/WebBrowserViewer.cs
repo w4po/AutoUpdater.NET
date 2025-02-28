@@ -31,7 +31,6 @@ public class WebBrowserViewer : IChangelogViewer
         {
             Dock = DockStyle.Fill,
             ScriptErrorsSuppressed = true,
-            AllowWebBrowserDrop = false,
             WebBrowserShortcutsEnabled = false,
             IsWebBrowserContextMenuEnabled = false
         };

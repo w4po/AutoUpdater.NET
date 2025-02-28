@@ -1,8 +1,8 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
     <metadata>
         <id>Autoupdater.NET.Extended</id>
-        <version>1.9.5.1</version>
+        <version>1.9.5.2</version>
         <title>AutoUpdater.NET Extended</title>
         <authors>rbsoft, w4po</authors>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
@@ -10,10 +10,10 @@
         <readme>docs\README.md</readme>
         <licenseUrl>https://licenses.nuget.org/MIT</licenseUrl>
         <projectUrl>https://github.com/w4po/AutoUpdater.NET</projectUrl>
-        <description>Extended version of AutoUpdater.NET with enhanced changelog viewer support and provider pattern implementation. Fork of the original AutoUpdater.NET by rbsoft.</description>
+        <description>Extended version of AutoUpdater.NET with enhanced changelog viewer support. Fork of the original AutoUpdater.NET by rbsoft.</description>
         <releaseNotes>https://github.com/w4po/AutoUpdater.NET/releases</releaseNotes>
         <copyright>Copyright © 2012-2025 RBSoft, 2025 w4po</copyright>
-        <tags>autoupdate updater c# vb wpf winforms extended provider-pattern</tags>
+        <tags>autoupdate updater c# vb wpf winforms extended</tags>
         <dependencies>
             <group targetFramework=".NETFramework4.6.2" />
             <group targetFramework=".NETCoreApp3.1" />
