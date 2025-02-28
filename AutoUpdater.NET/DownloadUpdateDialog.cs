@@ -221,6 +221,9 @@ internal partial class DownloadUpdateDialog : Form
                     arguments.Add(string.Join(" ", args.Skip(1).Select(arg => $"\"{arg}\"")));
                 }
 
+                if (AutoUpdater.FlattenRootFolder)
+                    arguments.Add("--flatten-root-folder");
+
                 processStartInfo.Arguments = Utils.BuildArguments(arguments);
             }
             else if (extension.Equals(".msi", StringComparison.OrdinalIgnoreCase))

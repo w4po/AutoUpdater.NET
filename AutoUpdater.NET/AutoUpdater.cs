@@ -132,6 +132,11 @@ public static class AutoUpdater
     public static bool ClearAppDirectory = false;
 
     /// <summary>
+    ///     Set this to true if you want to flatten the root folder in zip file.
+    /// </summary>
+    public static bool FlattenRootFolder = false;
+
+    /// <summary>
     ///     Set it to folder path where you want to download the update file. If not provided then it defaults to Temp folder.
     /// </summary>
     public static string DownloadPath;
@@ -762,7 +767,7 @@ public static class AutoUpdater
         {
             basicAuthentication?.Apply(ref webClient);
 
-            webClient.Headers[HttpRequestHeader.UserAgent] = HttpUserAgent;
+            webClient.Headers[HttpRequestHeader.UserAgent] = GetUserAgent();
         }
 
         return webClient;

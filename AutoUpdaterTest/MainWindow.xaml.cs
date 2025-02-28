@@ -173,11 +173,16 @@ public partial class MainWindow : Window
         // Uncomment following line to change the Icon shown on the updater dialog.
         AutoUpdater.Icon = Resource.Icon;
 
+        // Uncomment following line to disable automatic loading of changelog extensions.
+        //AutoUpdater.AutoLoadExtensions = false;
+
+        // Uncomment following line to extract the zip file without root folder.
+        //AutoUpdater.FlattenRootFolder = true;
+
         // Uncomment following line to change the Changelog viewer type.
         //AutoUpdater.ChangelogViewerProvider = new RichTextBoxViewerProvider();
 
         // Uncomment following lines to handle parsing logic of custom AppCast file.
-        //AutoUpdater.HttpUserAgent = "AutoUpdaterTest";
         //AutoUpdater.ParseUpdateInfoEvent += p =>
         //{
         //    var json = JsonConvert.DeserializeObject<dynamic>(p.RemoteData);

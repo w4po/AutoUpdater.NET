@@ -31,6 +31,11 @@
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
         <LangVersion>latest</LangVersion>
     </PropertyGroup>
+
+    <PropertyGroup Condition="'$(TargetFramework)' == 'net462'">
+        <GenerateResourceUsePreserializedResources>true</GenerateResourceUsePreserializedResources>
+    </PropertyGroup>
+
     <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
         <DebugType>pdbonly</DebugType>
     </PropertyGroup>
@@ -38,6 +43,7 @@
         <DebugType>full</DebugType>
     </PropertyGroup>
     <ItemGroup Condition=" '$(TargetFramework)' == 'net462' ">
+        <PackageReference Include="System.Resources.Extensions" Version="7.0.0" />
         <Reference Include="System"/>
         <Reference Include="System.Data"/>
         <Reference Include="System.Drawing"/>
