@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
 using System.IO.Compression;
+using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading;
@@ -24,6 +25,26 @@ public partial class FormMain : Form
         InitializeComponent();
     }
 
+    private static string GetRootFolder(ReadOnlyCollection<ZipArchiveEntry> entries)
+    {
+        if (entries.Count == 0) return null;
+
+        // Check if there's a root folder by looking at the first entry
+        var firstEntry = entries[0];
+
+        // Normalize the path by trimming leading separators
+        var normalizedPath = firstEntry.FullName.TrimStart('/', '\\');
+
+        var separatorIndex = normalizedPath.IndexOfAny(['\\', '/']);
+        if (separatorIndex == -1) return null;
+
+        var potentialRoot = normalizedPath.Substring(0, separatorIndex + 1);
+
+        // Check if all entries start with the root folder
+        return entries.All(e => e.FullName.TrimStart('/', '\\').StartsWith(potentialRoot))
+            ? potentialRoot
+            : null;
+    }
     private void FormMain_Shown(object sender, EventArgs e)
     {
         string zipPath = null;
@@ -31,6 +52,7 @@ public partial class FormMain : Form
         string currentExe = null;
         string updatedExe = null;
         var clearAppDirectory = false;
+        var flattenRootFolder = false;
         string commandLineArgs = null;
 
         _logBuilder.AppendLine(DateTime.Now.ToString("F"));
@@ -60,6 +82,9 @@ public partial class FormMain : Form
                     break;
                 case "--args":
                     commandLineArgs = args[index + 1];
+                    break;
+                case "--flatten-root-folder":
+                    flattenRootFolder = true;
                     break;
             }
 
@@ -144,6 +169,7 @@ public partial class FormMain : Form
 
                 _logBuilder.AppendLine($"Found total of {entries.Count} files and folders inside the zip file.");
 
+                var rootFolder = flattenRootFolder ? GetRootFolder(entries) : null;
                 for (var index = 0; index < entries.Count; index++)
                 {
                     if (_backgroundWorker.CancellationPending)
@@ -163,7 +189,13 @@ public partial class FormMain : Form
                         var filePath = string.Empty;
                         try
                         {
-                            filePath = Path.Combine(extractionPath, entry.FullName);
+                            // Get the relative path
+                            var relativePath = rootFolder != null
+                                ? entry.FullName.Substring(rootFolder.Length)
+                                : entry.FullName;
+
+                            filePath = Path.Combine(extractionPath, relativePath);
+
                             if (!entry.IsDirectory())
                             {
                                 string parentDirectory = Path.GetDirectoryName(filePath);

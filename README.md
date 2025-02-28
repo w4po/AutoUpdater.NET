@@ -334,6 +334,24 @@ to clear the application directory before extracting the update file using the b
 AutoUpdater.ClearAppDirectory = true;
 ````
 
+### Flatten root folder when extracting zip file
+
+Sometimes zip files contain a root folder with all the application files inside it. If you want to extract the contents of this root folder directly to the application directory instead of creating the root folder in the application directory, you can use the `FlattenRootFolder` option:
+
+````csharp
+AutoUpdater.FlattenRootFolder = true;
+````
+This is particularly useful for zip files with structures like:
+```
+AppName.zip
+  └── AppName/
+      ├── executable.exe
+      ├── lib/
+      │   └── some.dll
+      └── data/
+          └── config.json
+```
+
 ### Specify size of the UpdateForm
 
 You can specify the size of the update form by using below code.
